@@ -16,14 +16,6 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
     }
     
     @IBAction func calculate(_ sender: Any) {
@@ -43,10 +35,6 @@ class ViewController: NSViewController {
         
         totalScoresLabel.stringValue = returnedString
     }
-    
-    // Fred 10+5+15+10+10+10+20+10+5+15
-    // Jack 10+5+15+10+10+10+20+10+5+15
-    // Tom 15+20+10+10+10+10+5+20+15+10
     
     func splitLines(multiLineString: String) -> [String] {
         var strings = [String]()
@@ -79,17 +67,5 @@ class ViewController: NSViewController {
         
         return score
     }
-    
-    func splitScore(member: String, scores: String) -> String {
-        var score = 0
-        let scoresArray = scores.split(separator: "+")
-        scoresArray.map() { scoreString in
-            if let scoreInt = Int(scoreString) {
-                score += scoreInt
-            }
-        }
-        return "\(member): \(score) "
-    }
-
 }
 
